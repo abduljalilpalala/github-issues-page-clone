@@ -30,7 +30,7 @@ const useFetch = (page, state) => {
 
     useEffect(() => {
         fetchData();
-    }, [page]);
+    }, [page, state]);
 
     return {
         data,

@@ -31,7 +31,7 @@ function App() {
         >
             <Container maxWidth="md" sx={{ marginTop: 6 }}>
                 <Box sx={{ height: "90vh" }}>
-                    <FilterIssues setState={setState} state={state} />
+                    <FilterIssues  state={state} setState={setState} setPage={setPage} />
                         <Issues />
                     <Pagination />
                 </Box>
