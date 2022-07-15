@@ -1,11 +1,17 @@
 import { Box } from "@mui/material";
-import { LoadingButton } from "@mui/lab";
+
 import { useContext } from "react";
 import { IssuesContext } from "../context/IssuesContext";
 import Stack from "@mui/material/Stack";
+import PaginationButton from "./PaginationButton";
 
 const Pagination = () => {
-    const { page, setPage, isPending } = useContext(IssuesContext);
+    const {
+        nextBtnLoading,
+        setNextBtnLoading,
+        previousBtnLoading,
+        setPreviousBtnLoading,
+    } = useContext(IssuesContext);
 
     return (
         <Box sx={{ py: 2 }}>
@@ -15,26 +21,16 @@ const Pagination = () => {
                 direction="row"
                 spacing={2}
             >
-                <LoadingButton
-                    variant="outlined"
-                    disabled={page <= 1}
-                    onClick={() => {
-                        setPage(page - 1);
-                    }}
-                    sx={{ mr: 2 }}
-                >
-                    Previous
-                </LoadingButton>
-                <LoadingButton
-                    loading={isPending}
-                    disabled={page > 3}
-                    variant="outlined"
-                    onClick={() => {
-                        setPage(page + 1);
-                    }}
-                >
-                    Next
-                </LoadingButton>
+                <PaginationButton
+                    btnLoading={previousBtnLoading}
+                    setBtnLoading={setPreviousBtnLoading}
+                    btnText="PREVIOUS"
+                />
+                <PaginationButton
+                    btnLoading={nextBtnLoading}
+                    setBtnLoading={setNextBtnLoading}
+                    btnText="NEXT"
+                />
             </Stack>
         </Box>
     );

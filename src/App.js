@@ -9,15 +9,31 @@ import Pagination from "./components/Pagination";
 function App() {
     const [page, setPage] = useState(1);
     const [state, setState] = useState("all");
-    const { data: issues, isPending } = useFetch(page, state);
+    const {
+        data: issues,
+        nextBtnLoading,
+        setNextBtnLoading,
+        previousBtnLoading,
+        setPreviousBtnLoading,
+    } = useFetch(page, state);
 
     return (
-        <IssuesContext.Provider value={{ issues, page, setPage }}>
+        <IssuesContext.Provider
+            value={{
+                issues,
+                page,
+                setPage,
+                nextBtnLoading,
+                setNextBtnLoading,
+                previousBtnLoading,
+                setPreviousBtnLoading,
+            }}
+        >
             <Container maxWidth="md" sx={{ marginTop: 6 }}>
                 <Box sx={{ height: "90vh" }}>
                     <FilterIssues setState={setState} state={state} />
-                    <Issues />
-					<Pagination />
+                        <Issues />
+                    <Pagination />
                 </Box>
             </Container>
         </IssuesContext.Provider>
