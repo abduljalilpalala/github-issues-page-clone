@@ -1,10 +1,10 @@
 import useFetch from "./api/useFetch";
 import { useState } from "react";
 import { IssuesContext } from "./context/IssuesContext";
-import Issues from "./api/components/Issues";
+import Issues from "./components/Issues";
 import { Container, Box } from "@mui/material";
-import FilterIssues from "./api/components/FilterIssues";
-import Pagination from "./api/components/Pagination";
+import FilterIssues from "./components/FilterIssues";
+import Pagination from "./components/Pagination";
 
 function App() {
     const [page, setPage] = useState(1);

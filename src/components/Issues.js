@@ -1,6 +1,6 @@
 import { List } from "@mui/material";
 import { useContext } from "react";
-import { IssuesContext } from "../../context/IssuesContext";
+import { IssuesContext } from "../context/IssuesContext";
 import IssueItem from "./IssueItem";
 
 const Issues = () => {

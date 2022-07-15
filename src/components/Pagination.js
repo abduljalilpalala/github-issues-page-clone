@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 import { useContext } from "react";
-import { IssuesContext } from "../../context/IssuesContext";
+import { IssuesContext } from "../context/IssuesContext";
 import Stack from "@mui/material/Stack";
 
 const Pagination = () => {
